@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/anniviz/lean-coffee-board/issues"
   },
-  "homepage": "https://github.com/anniviz/lean-coffee-board#readme"
+  "homepage": "https://github.com/anniviz/lean-coffee-board#readme",
+  "dependencies": {
+    "mongodb": "^3.6.9"
+  }
 }
