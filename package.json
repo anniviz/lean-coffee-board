@@ -10,13 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/anniviz/lean-coffee-board.git"
   },
-  "author": "",
+  "author": "Anni Wisbar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anniviz/lean-coffee-board/issues"
   },
   "homepage": "https://github.com/anniviz/lean-coffee-board#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mongodb": "^3.6.9"
   }
 }
