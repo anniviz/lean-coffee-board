@@ -1,9 +1,11 @@
 const MongoClient = require('mongodb').MongoClient
-const url = 'mongodb://127.0.0.1:27017'
+const url = 'mongodb://localhost'
 
 const userName = process.argv[2]
 const userAge = Number(process.argv[3])
 const userEmail = process.argv[4]
+
+const [name, age, email] = process.argv.slice(2)
 
 const client = new MongoClient(
   url,
@@ -41,18 +43,30 @@ async function create() {
     const db = client.db('lean-coffee-board')
     const users = db.collection('users')
 
+    // await users.insertOne({
+    //   name: userName,
+    //   age: userAge,
+    //   email: userEmail,
+    // })
+
     await users.insertOne({
-      name: userName,
-      age: userAge,
-      email: userEmail,
+      name,
+      age,
+      email,
     })
+
+    await console.log(Success)
 
     // await users.find().toArray((err, results) => {
     //   console.log(results)
     // })
+  } catch {
+    console.log('error')
   } finally {
     await client.close()
   }
 }
 
-create().catch(console.dir)
+if (userEmail) {
+  create().catch(console.dir)
+}
